@@ -27,7 +27,7 @@ const create_item = () => {
     item.appendChild(input);
 
     let save_btn = document.createElement('button');
-    save_btn.innerHTML = 'save';
+    save_btn.innerHTML = 'Save';
     save_btn.addEventListener('click', () => {
         error.innerHTML = '';
         if (input.value !== '') {
@@ -35,7 +35,7 @@ const create_item = () => {
             item.innerHTML = input.value;
             adding = false;
         } else {
-            error.innerHTml = message;
+            error.innerHTML = message;
         }
     });
     item.appendChild(save_btn);
@@ -46,7 +46,7 @@ const create_item = () => {
 document.querySelectorAll('.drop').forEach(element => {
     element.addEventListener('drop', event => {
         event.preventDefault();
-        const id = event.dataTranfer.getData('text');
+        const id = event.dataTransfer.getData('text');
         event.target.appendChild(document.getElementById(id));
     });
     element.addEventListener('dragover', event =>
